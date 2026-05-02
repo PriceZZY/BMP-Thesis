@@ -1,0 +1,416 @@
+{
+  "pp_drp_ratio": {
+    "label": "PP:DRP Ratio (PP fraction)",
+    "default": 0.8,
+    "results": [
+      {
+        "value": 0.7,
+        "fcfs_mean": 94.49758968660001,
+        "smart_mean": 99.6389911409712,
+        "improvement_pct": 5.44077523185785,
+        "target_achievement_pct": 155.6859236577675,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.75,
+        "fcfs_mean": 93.28179672233618,
+        "smart_mean": 98.52143383016305,
+        "improvement_pct": 5.616998484091423,
+        "target_achievement_pct": 153.93974035962975,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.8,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.85,
+        "fcfs_mean": 90.85021079380844,
+        "smart_mean": 96.28631920854667,
+        "improvement_pct": 5.983594718427121,
+        "target_achievement_pct": 150.44737376335416,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.9,
+        "fcfs_mean": 89.6344178295445,
+        "smart_mean": 95.16876189773852,
+        "improvement_pct": 6.174351551787326,
+        "target_achievement_pct": 148.70119046521643,
+        "win_rate": 0.96
+      }
+    ]
+  },
+  "pp_bioavail": {
+    "label": "PP Bioavailability",
+    "default": 0.25,
+    "results": [
+      {
+        "value": 0.15,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.2,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.25,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.3,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.35,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      }
+    ]
+  },
+  "tile_penalty": {
+    "label": "Tile Drain Type A Penalty",
+    "default": 0.5,
+    "results": [
+      {
+        "value": 0.2,
+        "fcfs_mean": 95.85777377167229,
+        "smart_mean": 101.43597149272873,
+        "improvement_pct": 5.81924397111849,
+        "target_achievement_pct": 158.49370545738864,
+        "win_rate": 0.97
+      },
+      {
+        "value": 0.35,
+        "fcfs_mean": 93.96188876487227,
+        "smart_mean": 99.41992400604178,
+        "improvement_pct": 5.808775571580467,
+        "target_achievement_pct": 155.3436312594403,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.5,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.65,
+        "fcfs_mean": 90.1701187512723,
+        "smart_mean": 95.38782903266788,
+        "improvement_pct": 5.786518143320024,
+        "target_achievement_pct": 149.04348286354357,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.8,
+        "fcfs_mean": 88.27423374447226,
+        "smart_mean": 93.37178154598095,
+        "improvement_pct": 5.774672387714615,
+        "target_achievement_pct": 145.89340866559525,
+        "win_rate": 0.97
+      }
+    ]
+  },
+  "addit_low": {
+    "label": "Additionality Baseline (Low Risk)",
+    "default": 0.4,
+    "results": [
+      {
+        "value": 0.2,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.3,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.4,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.5,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.6,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      }
+    ]
+  },
+  "addit_high": {
+    "label": "Additionality Baseline (High Risk)",
+    "default": 0.1,
+    "results": [
+      {
+        "value": 0.05,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.1,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.15,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.2,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.3,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      }
+    ]
+  },
+  "bmp_a_high": {
+    "label": "Type A Effectiveness (High Risk)",
+    "default": 0.6,
+    "results": [
+      {
+        "value": 0.3,
+        "fcfs_mean": 66.98581458565697,
+        "smart_mean": 70.5629840701805,
+        "improvement_pct": 5.340189570956539,
+        "target_achievement_pct": 110.25466260965703,
+        "win_rate": 0.98
+      },
+      {
+        "value": 0.45,
+        "fcfs_mean": 79.52590917186463,
+        "smart_mean": 83.9834302947677,
+        "improvement_pct": 5.605118092104875,
+        "target_achievement_pct": 131.22410983557452,
+        "win_rate": 0.97
+      },
+      {
+        "value": 0.6,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.75,
+        "fcfs_mean": 104.60609834427993,
+        "smart_mean": 110.82432274394203,
+        "improvement_pct": 5.944418631499538,
+        "target_achievement_pct": 173.16300428740942,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.9,
+        "fcfs_mean": 117.14619293048757,
+        "smart_mean": 124.24476896852919,
+        "improvement_pct": 6.059587478232246,
+        "target_achievement_pct": 194.13245151332686,
+        "win_rate": 0.95
+      }
+    ]
+  },
+  "bmp_b_high": {
+    "label": "Type B Effectiveness (High Risk)",
+    "default": 0.7,
+    "results": [
+      {
+        "value": 0.5,
+        "fcfs_mean": 87.88957824185145,
+        "smart_mean": 92.93497136685399,
+        "improvement_pct": 5.7406045471270755,
+        "target_achievement_pct": 145.21089276070936,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.6,
+        "fcfs_mean": 89.97779099996187,
+        "smart_mean": 95.1694239431044,
+        "improvement_pct": 5.769904868129889,
+        "target_achievement_pct": 148.70222491110064,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.7,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.8,
+        "fcfs_mean": 94.15421651618267,
+        "smart_mean": 99.63832909560527,
+        "improvement_pct": 5.824606461974035,
+        "target_achievement_pct": 155.68488921188325,
+        "win_rate": 0.96
+      },
+      {
+        "value": 0.88,
+        "fcfs_mean": 95.82478672267102,
+        "smart_mean": 101.42589115660564,
+        "improvement_pct": 5.845151996158283,
+        "target_achievement_pct": 158.47795493219633,
+        "win_rate": 0.96
+      }
+    ]
+  },
+  "base_p_high": {
+    "label": "Base P Loss (High Risk, kg/acre/yr)",
+    "default": 1.5,
+    "results": [
+      {
+        "value": 0.8,
+        "fcfs_mean": 61.836332187324,
+        "smart_mean": 65.05316515104072,
+        "improvement_pct": 5.202172978131692,
+        "target_achievement_pct": 101.64557054850111,
+        "win_rate": 0.98
+      },
+      {
+        "value": 1.1,
+        "fcfs_mean": 74.79190571764468,
+        "smart_mean": 78.91775573746108,
+        "improvement_pct": 5.516439219228291,
+        "target_achievement_pct": 123.30899333978293,
+        "win_rate": 0.97
+      },
+      {
+        "value": 1.5,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 1.75,
+        "fcfs_mean": 102.86231503333948,
+        "smart_mean": 108.95770200803848,
+        "improvement_pct": 5.925772692091729,
+        "target_achievement_pct": 170.24640938756013,
+        "win_rate": 0.96
+      },
+      {
+        "value": 2.0,
+        "fcfs_mean": 113.65862630860673,
+        "smart_mean": 120.51152749672207,
+        "improvement_pct": 6.029371822168862,
+        "target_achievement_pct": 188.29926171362823,
+        "win_rate": 0.96
+      }
+    ]
+  },
+  "peer_effect": {
+    "label": "Peer Effect Coefficient",
+    "default": 1.5,
+    "results": [
+      {
+        "value": 0.5,
+        "fcfs_mean": 88.56826445901449,
+        "smart_mean": 91.2457175078706,
+        "improvement_pct": 3.023038856197884,
+        "target_achievement_pct": 142.5714336060478,
+        "win_rate": 0.83
+      },
+      {
+        "value": 1.0,
+        "fcfs_mean": 90.19450878570991,
+        "smart_mean": 93.89758089910804,
+        "improvement_pct": 4.105651400792176,
+        "target_achievement_pct": 146.7149701548563,
+        "win_rate": 0.93
+      },
+      {
+        "value": 1.5,
+        "fcfs_mean": 92.0660037580723,
+        "smart_mean": 97.40387651935487,
+        "improvement_pct": 5.79787602740881,
+        "target_achievement_pct": 152.193557061492,
+        "win_rate": 0.96
+      },
+      {
+        "value": 2.0,
+        "fcfs_mean": 93.23913809008747,
+        "smart_mean": 101.34135636729876,
+        "improvement_pct": 8.689718119640858,
+        "target_achievement_pct": 158.3458693239043,
+        "win_rate": 1.0
+      },
+      {
+        "value": 2.5,
+        "fcfs_mean": 92.77775536228633,
+        "smart_mean": 106.67529480396752,
+        "improvement_pct": 14.979387448438386,
+        "target_achievement_pct": 166.68014813119925,
+        "win_rate": 1.0
+      }
+    ]
+  }
+}

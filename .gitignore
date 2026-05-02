@@ -1,0 +1,60 @@
+# Raw downloaded spatial data (1.7 GB; reproducible via src/data_prep/00_download_all_data.py)
+data/raw/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Manuscript: internal iteration / audit scratch (not part of public release)
+paper/.fix_batches/
+paper/jem_revision/
+paper/audit_summary*.md
+paper/review_findings.md
+paper/CHANGELOG.md
+paper/CITATION_IMPACT_ASSESSMENT.md
+paper/FIGURE_FIX_CHECKLIST.md
+paper/revision_proposal.md
+paper/project_introduction.md
+paper/response_to_reviewer.md
+paper/draft.md
+paper/draft_chinese*.md
+paper/draft_print*.docx
+paper/draft_FINAL.html
+paper/Zhou_Thames_BMP_Subsidy_Allocation_2026.md
+paper/Zhou_Thames_BMP_Subsidy_Allocation_2026.pdf
+paper/convert_*.js
+
+# Internal verification outputs (not part of methodology)
+results/citation_verification.json
+
+# Internal project planning
+PROJECT_PLAN.md
+PAPER_GUIDE.md

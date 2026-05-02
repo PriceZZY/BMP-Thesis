@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the accompanying manuscript and this software archive."
+type: software
+title: "BMP-Thesis: Spatially-Explicit Simulation of Agricultural BMP Subsidy Allocation in the Thames River Watershed"
+authors:
+  - family-names: Zhou
+    given-names: Zhenyu
+    orcid: "https://orcid.org/0009-0008-0673-2153"
+    affiliation: "University of Waterloo"
+license: MIT
+url: "https://github.com/<USER>/BMP-Thesis"
+keywords:
+  - Best Management Practices
+  - Agricultural phosphorus
+  - Spatially-explicit simulation
+  - Monte Carlo
+  - Cost-share programs
+  - Non-point source pollution
+  - Thames River
+  - Lake Erie
+preferred-citation:
+  type: article
+  title: "Risk-Participation Inversion Limits Spatial Targeting of Agricultural Phosphorus Subsidies in the Thames River Watershed"
+  authors:
+    - family-names: Zhou
+      given-names: Zhenyu
+      orcid: "https://orcid.org/0009-0008-0673-2153"
+      affiliation: "University of Waterloo"
+  journal: "Journal of Environmental Management"
+  year: 2026
+  notes: "Manuscript submitted; status will be updated after acceptance."

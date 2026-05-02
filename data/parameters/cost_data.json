@@ -1,0 +1,53 @@
+{
+    "_description": "BMP costs, subsidies, and budget constraints from UTRCA/LTVCA program documentation",
+    "_source": "UTRCA Thames River Phosphorus Reduction Program 2024-2028",
+
+    "annual_budget_usd": 4350000,
+    "_budget_note": "$17.41M / 4 years = $4.35M per year (Upper Thames only)",
+
+    "max_per_farm_total": 75000,
+    "_max_note": "$75,000 maximum per farm over 4-year program duration",
+
+    "subsidies_per_acre": {
+        "cover_crop_overwinter": 30,
+        "cover_crop_harvested": 15,
+        "no_fall_till_or_strip_till": 30,
+        "fall_vertical_till": 15,
+        "soil_testing": 12.5,
+        "manure_management": 50,
+        "subsurface_p_placement": 20
+    },
+
+    "simplified_subsidies": {
+        "_description": "Simplified for model: Type A and Type B default subsidy rates",
+        "type_a_default": 30,
+        "type_b_default": 20
+    },
+
+    "bmp_costs_per_acre": {
+        "_description": "Farmer's cost to implement BMP (before subsidy)",
+        "type_a_low": 10,
+        "type_a_high": 50,
+        "type_a_typical": 25,
+        "type_b_low": 20,
+        "type_b_high": 50,
+        "type_b_typical": 35
+    },
+
+    "cost_share_rates": {
+        "erosion_control": 0.70,
+        "tree_planting_min": 0.50,
+        "tree_planting_max": 0.75,
+        "livestock_restriction": 0.70
+    },
+
+    "cost_share_caps": {
+        "erosion_control": 8000,
+        "tree_planting_low": 3000,
+        "tree_planting_high": 5000,
+        "livestock_restriction": 5000,
+        "soil_testing": 15000,
+        "manure_management": 10000,
+        "subsurface_p": 15000
+    }
+}

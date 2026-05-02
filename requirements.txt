@@ -1,0 +1,17 @@
+# Pinned to versions used to produce the manuscript results.
+# Python 3.13.2 (tested). Should also work on 3.11/3.12.
+# On Windows, if pip install fails on geopandas/rasterio (GDAL binaries),
+# install those via conda first:
+#   conda install -c conda-forge geopandas rasterio fiona shapely pyproj
+# then `pip install -r requirements.txt` for the rest.
+
+geopandas==1.1.3
+rasterio==1.5.0
+shapely==2.1.2
+fiona==1.10.1
+pyproj==3.7.2
+numpy==2.4.4
+pandas==3.0.2
+matplotlib==3.10.8
+contextily==1.7.0
+scipy==1.17.1

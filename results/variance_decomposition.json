@@ -1,0 +1,13 @@
+{
+  "n_runs": 1000,
+  "var_precip": 798.8181800373691,
+  "var_pure_params": 0.00952103595819409,
+  "var_adoption": 3.6221504426764732,
+  "total_var": 802.4498515160037,
+  "pct_precip": 99.54742698602615,
+  "pct_pure_params": 0.0011864960707771042,
+  "pct_adoption": 0.45138651790307355,
+  "variance_A_params": 3.6316714786346673,
+  "variance_B_precip": 798.8181800373691,
+  "variance_C_adoption": 3.6221504426764732
+}

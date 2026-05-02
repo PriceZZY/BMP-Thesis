@@ -1,0 +1,28 @@
+{
+  "title": "BMP-Thesis: Spatially-Explicit Simulation of Agricultural BMP Subsidy Allocation in the Thames River Watershed",
+  "description": "<p>Source code, processed spatial data, and Monte Carlo results accompanying the manuscript <em>Risk-Participation Inversion Limits Spatial Targeting of Agricultural Phosphorus Subsidies in the Thames River Watershed</em> (submitted to <em>Journal of Environmental Management</em>, 2026).</p><p>The repository contains a spatially-explicit stochastic simulation of 8,949 agricultural fields in the Upper Thames River watershed (Ontario, Canada), evaluating five subsidy allocation strategies under voluntary-participation constraints and the full phosphorus transport chain. All input data are publicly available; raw downloads (1.7 GB) are reproducible via the bundled data-preparation pipeline.</p>",
+  "creators": [
+    {
+      "name": "Zhou, Zhenyu",
+      "affiliation": "University of Waterloo",
+      "orcid": "0009-0008-0673-2153"
+    }
+  ],
+  "keywords": [
+    "Best Management Practices",
+    "Agricultural phosphorus",
+    "Spatially-explicit simulation",
+    "Monte Carlo",
+    "Cost-share programs",
+    "Non-point source pollution",
+    "Thames River",
+    "Lake Erie",
+    "Watershed management",
+    "Subsidy allocation"
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "language": "eng",
+  "communities": []
+}

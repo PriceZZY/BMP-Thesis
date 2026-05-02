@@ -1,0 +1,40 @@
+{
+    "_description": "BMP effectiveness rates from literature review. All values are proportional reduction (0-1).",
+    "_sources": [
+        "UTRCA Thames River phosphorus studies",
+        "Liu et al. 2019 - Cover crops and P losses in cold climates",
+        "PMC 2024 - Effectiveness of residue and tillage management",
+        "Frontiers 2022 - Efficacy of riparian buffers (meta-analysis)",
+        "Ohio State - Subsurface P placement studies",
+        "2025 Canadian Lake Erie BMP literature review"
+    ],
+
+    "type_a_particulate_p_reduction": {
+        "_description": "Surface protection BMPs: reduction in particulate phosphorus",
+        "high_risk":   {"mean": 0.60, "std": 0.15, "min": 0.30, "max": 0.90},
+        "medium_risk": {"mean": 0.30, "std": 0.10, "min": 0.15, "max": 0.50},
+        "low_risk":    {"mean": 0.10, "std": 0.05, "min": 0.05, "max": 0.20}
+    },
+
+    "type_b_dissolved_p_reduction": {
+        "_description": "Fertilizer management BMPs: reduction in dissolved reactive phosphorus",
+        "high_risk":   {"mean": 0.70, "std": 0.10, "min": 0.50, "max": 0.88},
+        "medium_risk": {"mean": 0.50, "std": 0.10, "min": 0.30, "max": 0.70},
+        "low_risk":    {"mean": 0.30, "std": 0.10, "min": 0.15, "max": 0.50}
+    },
+
+    "particulate_to_total_p_ratio": {
+        "_description": "Fraction of total P that is particulate (rest is dissolved)",
+        "mean": 0.60,
+        "min": 0.50,
+        "max": 0.75
+    },
+
+    "base_p_loss_kg_per_acre_per_year": {
+        "_description": "Baseline annual phosphorus loss without any BMP, by risk level",
+        "_validation": "620,000 acres * 0.5 avg = 310 tonnes, close to observed ~300 tonnes/yr",
+        "high_risk":   {"mean": 1.50, "std": 0.50, "min": 1.00, "max": 2.50},
+        "medium_risk": {"mean": 0.50, "std": 0.20, "min": 0.20, "max": 0.80},
+        "low_risk":    {"mean": 0.15, "std": 0.05, "min": 0.05, "max": 0.30}
+    }
+}
