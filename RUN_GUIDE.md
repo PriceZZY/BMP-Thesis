@@ -23,7 +23,7 @@ This guide lets a reviewer **verify the headline results in under 15 minutes** w
 Requirements: **Python 3.11+** (tested on 3.13.2), ~3 GB free disk for the no-raw-data path. Tested on Windows 11 with 14 CPU cores.
 
 ```bash
-git clone https://github.com/<USER>/BMP-Thesis.git
+git clone https://github.com/PriceZZY/BMP-Thesis.git
 cd BMP-Thesis
 pip install -r requirements.txt
 ```

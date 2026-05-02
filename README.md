@@ -3,6 +3,7 @@
 Monte Carlo simulation of agricultural phosphorus Best Management Practice (BMP) subsidy allocation in the Upper Thames River watershed, Ontario. Evaluates five subsidy allocation strategies (FCFS baseline plus four alternative designs) against voluntary-participation constraints and phosphorus transport chain attribution across 8,949 agricultural fields.
 
 **Manuscript**: [`paper/draft_FINAL.md`](paper/draft_FINAL.md)
+**Archived release**: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19971792.svg)](https://doi.org/10.5281/zenodo.19971792) (v1.0.0, commit `3821bf3`)
 
 ## Summary of Findings
 
