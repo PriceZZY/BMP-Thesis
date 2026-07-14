@@ -134,7 +134,12 @@ def simulate_program(env, strategy, annual_budget=DEFAULT_ANNUAL_BUDGET,
                 break
 
         # Year-end detailed metrics
-        metrics = env.detailed_metrics(sample=not env.stochastic)
+        # FIX 2026-07-13: was `sample=not env.stochastic`, which is False whenever the run
+        # IS stochastic — so environment.py's `if sample and self.stochastic:` gate never
+        # fired and the biophysical parameters were pinned to their means in every
+        # reported result. That is what made the variance decomposition report parameter
+        # uncertainty as 0.001%: Experiment A and Experiment C were the same experiment.
+        metrics = env.detailed_metrics(sample=True)
         summary = env.summary()
 
         result = {

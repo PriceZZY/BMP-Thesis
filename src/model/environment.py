@@ -81,15 +81,61 @@ class ThamesEnvironment:
         self.rng = np.random.RandomState(seed)
 
         if data_path is None:
-            data_path = Path("D:/Claude/BMP-Thesis/data/processed")
+            # Repo-relative: .../src/model/environment.py -> .../data/processed
+            data_path = Path(__file__).resolve().parents[2] / "data" / "processed"
 
         self.data_path = Path(data_path)
         self.farms = []
         self.current_precip_multiplier = 1.0  # Set per year in simulation
 
+        # Run-level realization of the uncertain biophysical parameters.
+        # Drawn from a dedicated RNG stream so that the precipitation sequence,
+        # adoption noise and initial-adoption assignment on self.rng are bit-identical
+        # to the pre-fix runs; the only thing that changes is that the parameters
+        # now actually vary between runs.
+        self.param_rng = np.random.RandomState((0 if seed is None else seed) + 777_000)
+        self.params = self._draw_run_params()
+
         self._load_farms()
         self._build_neighbor_graph()
         self._set_initial_adoption()
+
+    @staticmethod
+    def _mean_params():
+        return {
+            'BASE_P_LOSS': {k: v['mean'] for k, v in BASE_P_LOSS.items()},
+            'REDUCTION_A': {k: v['mean'] for k, v in REDUCTION_A.items()},
+            'REDUCTION_B': {k: v['mean'] for k, v in REDUCTION_B.items()},
+            'PARTICULATE_RATIO': PARTICULATE_RATIO['mean'],
+        }
+
+    def _draw_run_params(self):
+        """Draw ONE realization of the uncertain biophysical parameters per run.
+
+        Parameter uncertainty here is epistemic and watershed-correlated: we do not know
+        whether the true mean Type-A effectiveness on high-risk fields is 0.55 or 0.65 —
+        and whichever it is, it applies to every field at once. Drawing independently per
+        field (8,949 draws per call) averages that uncertainty away by the law of large
+        numbers and reports it as ~0. One draw per run, shared by all fields, is the
+        correct treatment and is what the variance decomposition requires.
+        """
+        if not self.stochastic:
+            return self._mean_params()
+        r = self.param_rng
+        return {
+            'BASE_P_LOSS': {k: max(0.01, float(r.normal(v['mean'], v['std'])))
+                            for k, v in BASE_P_LOSS.items()},
+            'REDUCTION_A': {k: float(np.clip(r.normal(v['mean'], v['std']), 0.05, 0.95))
+                            for k, v in REDUCTION_A.items()},
+            'REDUCTION_B': {k: float(np.clip(r.normal(v['mean'], v['std']), 0.05, 0.95))
+                            for k, v in REDUCTION_B.items()},
+            'PARTICULATE_RATIO': float(r.uniform(PARTICULATE_RATIO['min'],
+                                                 PARTICULATE_RATIO['max'])),
+        }
+
+    def use_mean_params(self):
+        """Pin parameters to their means (used by variance-decomposition Experiments B and C)."""
+        self.params = self._mean_params()
 
     def _load_farms(self):
         """Load farm agents from AAFC field-level GeoPackage."""
@@ -187,14 +233,19 @@ class ThamesEnvironment:
             )
         return 1.0
 
+    def _active_params(self, sample=True):
+        """Parameters in force for this call: the run-level realization, or the means."""
+        return self.params if sample else self._mean_params()
+
     def base_p_loss(self, farm, sample=True):
-        """Base annual P loss (kg). Scaled by precipitation multiplier."""
-        params = BASE_P_LOSS[farm.risk_level]
-        if sample and self.stochastic:
-            rate = self.rng.normal(params['mean'], params['std'])
-            rate = max(0.01, rate)
-        else:
-            rate = params['mean']
+        """Base annual P loss (kg). Scaled by precipitation multiplier.
+
+        FIX 2026-07-13: was `if sample and self.stochastic:` while simulation.py passed
+        `sample = not env.stochastic` — so the condition was False in every reported run
+        and the rate was always pinned to the mean. Now reads the run-level realization
+        drawn in _draw_run_params().
+        """
+        rate = self._active_params(sample)['BASE_P_LOSS'][farm.risk_level]
         return farm.area_acres * rate * self.current_precip_multiplier
 
     def p_reduction_detailed(self, farm, sample=True):
@@ -214,13 +265,11 @@ class ThamesEnvironment:
                 'is_additional': False,
             }
 
+        p = self._active_params(sample)
         base = self.base_p_loss(farm, sample=sample)
 
         # Split into particulate and dissolved (P1: updated to 80:20)
-        if sample and self.stochastic:
-            p_ratio = self.rng.uniform(PARTICULATE_RATIO['min'], PARTICULATE_RATIO['max'])
-        else:
-            p_ratio = PARTICULATE_RATIO['mean']
+        p_ratio = p['PARTICULATE_RATIO']
 
         pp_base = base * p_ratio
         drp_base = base * (1 - p_ratio)
@@ -230,11 +279,7 @@ class ThamesEnvironment:
 
         # Type A: reduces particulate P
         if farm.has_type_a:
-            red_a = REDUCTION_A[farm.risk_level]
-            if sample and self.stochastic:
-                r = np.clip(self.rng.normal(red_a['mean'], red_a['std']), 0.05, 0.95)
-            else:
-                r = red_a['mean']
+            r = p['REDUCTION_A'][farm.risk_level]
 
             # P2: Tile drainage penalty — surface BMP less effective on tile-drained fields
             if farm.is_tile_drained:
@@ -244,12 +289,7 @@ class ThamesEnvironment:
 
         # Type B: reduces dissolved reactive P
         if farm.has_type_b:
-            red_b = REDUCTION_B[farm.risk_level]
-            if sample and self.stochastic:
-                r = np.clip(self.rng.normal(red_b['mean'], red_b['std']), 0.05, 0.95)
-            else:
-                r = red_b['mean']
-            drp_reduced = drp_base * r
+            drp_reduced = drp_base * p['REDUCTION_B'][farm.risk_level]
 
         total = pp_reduced + drp_reduced
 
