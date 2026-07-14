@@ -1,3 +1,4 @@
+import pathlib
 """
 03_build_field_agents.py
 Use AAFC Annual Crop Inventory to create field-level agents.
@@ -17,8 +18,10 @@ import pandas as pd
 from shapely.geometry import shape
 from pathlib import Path
 
-RAW = Path("D:/Claude/BMP-Thesis/data/raw")
-PROCESSED = Path("D:/Claude/BMP-Thesis/data/processed")
+_REPO = pathlib.Path(__file__).resolve().parents[2]
+
+RAW = (_REPO / "data/raw")
+PROCESSED = (_REPO / "data/processed")
 
 # AAFC crop codes for agricultural crops (the ones we care about)
 # Source: https://open.canada.ca/data/en/dataset/ba2645d5-4458-414d-b196-6303ac06c1c9

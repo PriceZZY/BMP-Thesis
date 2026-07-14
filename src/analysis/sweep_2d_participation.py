@@ -1,3 +1,4 @@
+import pathlib
 """
 2D Participation Rate Sweep: high-risk vs low-risk participation rates.
 Each combo: 100 MC runs x 2 strategies (FCFS vs Smart).
@@ -5,7 +6,7 @@ Output: heat map of Smart vs FCFS improvement.
 Uses shared environment loaded once, passed to workers via global.
 """
 import sys
-sys.path.insert(0, "D:/Claude/BMP-Thesis/src")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "src"))
 
 import numpy as np
 import json
@@ -13,7 +14,9 @@ import time
 from multiprocessing import Pool
 from pathlib import Path
 
-RESULTS = Path("D:/Claude/BMP-Thesis/results")
+_REPO = pathlib.Path(__file__).resolve().parents[2]
+
+RESULTS = (_REPO / "results")
 FIGURES = RESULTS / "figures"
 
 HIGH_RATES = [0.20, 0.30, 0.40, 0.50, 0.60, 0.70]

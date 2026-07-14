@@ -1,3 +1,4 @@
+import pathlib
 """
 Figure 8: Tornado chart — sensitivity of Smart Hotspot improvement to each parameter.
 """
@@ -6,7 +7,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-RESULTS = Path("D:/Claude/BMP-Thesis/results")
+_REPO = pathlib.Path(__file__).resolve().parents[2]
+
+RESULTS = (_REPO / "results")
 FIGURES = RESULTS / "figures"
 
 with open(RESULTS / "sensitivity_oat_results.json") as f:
@@ -81,7 +84,7 @@ ax.annotate('Peer effect determines\nwhether spatial targeting\nmatters (+3% to 
 
 # Note that peer-effect influence is neutralized under the participation filter
 ax.text(0.98, 0.02,
-        'Under the constrained scenario (participation filter ON, Section 5.2),\n'
+        'Under the constrained scenario (participation filter ON, §3.6),\n'
         'peer-effect influence collapses — the participation constraint dominates\n'
         'adoption dynamics and Smart Hotspot underperforms FCFS (-1.6%, Table 3).',
         transform=ax.transAxes, ha='right', va='bottom', fontsize=9,

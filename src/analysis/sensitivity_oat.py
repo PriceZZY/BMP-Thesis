@@ -1,10 +1,11 @@
+import pathlib
 """
 OAT Sensitivity Analysis — Multiprocessing version.
 Parallelizes across parameter-value pairs using 8 processes.
 """
 
 import sys
-sys.path.insert(0, "D:/Claude/BMP-Thesis/src")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "src"))
 
 import numpy as np
 import json
@@ -12,7 +13,9 @@ import time
 from pathlib import Path
 from multiprocessing import Pool, cpu_count
 
-RESULTS = Path("D:/Claude/BMP-Thesis/results")
+_REPO = pathlib.Path(__file__).resolve().parents[2]
+
+RESULTS = (_REPO / "results")
 N_RUNS = 100
 
 SENSITIVITY_PARAMS = {

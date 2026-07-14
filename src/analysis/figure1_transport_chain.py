@@ -1,3 +1,4 @@
+import pathlib
 """
 Figure 1: Phosphorus Transport Chain Diagram
 From field application to Lake Erie, with BMP intervention points.
@@ -11,6 +12,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.patches import FancyBboxPatch
 import numpy as np
+
+_REPO = pathlib.Path(__file__).resolve().parents[2]
 
 fig, ax = plt.subplots(1, 1, figsize=(16, 10))
 ax.set_xlim(0, 16)
@@ -188,8 +191,8 @@ ax.legend(handles=legend_elements, loc='lower left', fontsize=8,
           framealpha=0.9, edgecolor=C_LOSS)
 
 plt.tight_layout()
-plt.savefig('D:/Claude/BMP-Thesis/results/figures/fig1_transport_chain.png',
+plt.savefig(str(_REPO / "results/figures/fig1_transport_chain.png"),
             dpi=300, bbox_inches='tight', facecolor='white')
-plt.savefig('D:/Claude/BMP-Thesis/results/figures/fig1_transport_chain.pdf',
+plt.savefig(str(_REPO / "results/figures/fig1_transport_chain.pdf"),
             bbox_inches='tight', facecolor='white')
 print("Saved: fig1_transport_chain.png + .pdf")

@@ -1,3 +1,4 @@
+import pathlib
 """
 02_build_p_risk_map.py
 1. Load Soil Survey shapefile + attribute table
@@ -20,8 +21,10 @@ import json
 import gzip
 import os
 
-RAW = Path("D:/Claude/BMP-Thesis/data/raw")
-PROCESSED = Path("D:/Claude/BMP-Thesis/data/processed")
+_REPO = pathlib.Path(__file__).resolve().parents[2]
+
+RAW = (_REPO / "data/raw")
+PROCESSED = (_REPO / "data/processed")
 TARGET_CRS = "EPSG:32617"
 
 print("=" * 60)

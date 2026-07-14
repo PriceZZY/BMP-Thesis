@@ -1,3 +1,4 @@
+import pathlib
 """
 Generate all paper figures from Monte Carlo results.
 Figures 2-7 (Figure 1 already done separately).
@@ -9,7 +10,9 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 from pathlib import Path
 
-RESULTS = Path("D:/Claude/BMP-Thesis/results")
+_REPO = pathlib.Path(__file__).resolve().parents[2]
+
+RESULTS = (_REPO / "results")
 FIGURES = RESULTS / "figures"
 FIGURES.mkdir(exist_ok=True)
 

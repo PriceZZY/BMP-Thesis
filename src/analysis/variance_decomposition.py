@@ -1,3 +1,4 @@
+import pathlib
 """
 Variance Decomposition: what drives the spread in P reduction outcomes?
 Three experiments, each 1000 MC runs, FCFS only:
@@ -6,7 +7,7 @@ Three experiments, each 1000 MC runs, FCFS only:
   C: Fix precip and params, vary adoption rng only → adoption noise
 """
 import sys
-sys.path.insert(0, "D:/Claude/BMP-Thesis/src")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "src"))
 
 import numpy as np
 import json
@@ -14,7 +15,9 @@ import time
 from multiprocessing import Pool
 from pathlib import Path
 
-RESULTS = Path("D:/Claude/BMP-Thesis/results")
+_REPO = pathlib.Path(__file__).resolve().parents[2]
+
+RESULTS = (_REPO / "results")
 N_RUNS = 1000
 
 

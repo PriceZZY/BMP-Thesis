@@ -1,13 +1,16 @@
+import pathlib
 """
 Test run: 3 strategies comparison.
 FCFS / Naive Hotspot / Smart Hotspot
 """
 import sys
-sys.path.insert(0, "D:/Claude/BMP-Thesis/src")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "src"))
 
 from model.environment import ThamesEnvironment
 from model.subsidy_strategies import FirstComeFirstServed, HotspotPriority, SmartHotspot
 from model.simulation import run_single_simulation
+
+_REPO = pathlib.Path(__file__).resolve().parents[2]
 
 print("=" * 60)
 print("ABM TEST RUN - 3 STRATEGIES")

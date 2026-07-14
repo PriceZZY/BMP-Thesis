@@ -1,3 +1,4 @@
+import pathlib
 """
 01_explore_data.py
 First look at all downloaded datasets. Load, check CRS, fields, and basic stats.
@@ -11,10 +12,12 @@ import os
 import numpy as np
 from pathlib import Path
 
+_REPO = pathlib.Path(__file__).resolve().parents[2]
+
 # Paths
-RAW = Path("D:/Claude/BMP-Thesis/data/raw")
-PROCESSED = Path("D:/Claude/BMP-Thesis/data/processed")
-FIGURES = Path("D:/Claude/BMP-Thesis/results/figures")
+RAW = (_REPO / "data/raw")
+PROCESSED = (_REPO / "data/processed")
+FIGURES = (_REPO / "results/figures")
 PROCESSED.mkdir(exist_ok=True)
 FIGURES.mkdir(exist_ok=True)
 

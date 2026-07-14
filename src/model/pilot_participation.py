@@ -1,3 +1,4 @@
+import pathlib
 """
 Pilot test: add participation filter before adoption decision.
 Not all farmers are reachable — some never engage with government programs.
@@ -14,11 +15,13 @@ If a farmer won't participate, no subsidy amount will change their mind.
 """
 
 import sys
-sys.path.insert(0, "D:/Claude/BMP-Thesis/src")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "src"))
 
 import numpy as np
 import time
 from multiprocessing import Pool
+
+_REPO = pathlib.Path(__file__).resolve().parents[2]
 
 # Participation rates
 PARTICIPATION_RATES = {

@@ -1,3 +1,4 @@
+import pathlib
 """
 Robustness check: invert participation rates.
 High risk 55%, Low risk 30% (opposite of default).
@@ -5,11 +6,13 @@ If conclusion flips, it's not robust. If it holds, it's robust.
 50 runs x 2 strategies, 6 workers.
 """
 import sys
-sys.path.insert(0, "D:/Claude/BMP-Thesis/src")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "src"))
 
 import numpy as np
 import time
 from multiprocessing import Pool
+
+_REPO = pathlib.Path(__file__).resolve().parents[2]
 
 # INVERTED rates
 PARTICIPATION = {'Low': 0.30, 'Medium': 0.45, 'High': 0.55}

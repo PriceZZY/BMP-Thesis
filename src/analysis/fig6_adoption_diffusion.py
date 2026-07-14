@@ -1,9 +1,10 @@
+import pathlib
 """
 Figure 6: Adoption diffusion over 4 years under Smart Hotspot.
 4-panel map showing spatial spread of BMP adoption via peer effects.
 """
 import sys
-sys.path.insert(0, "D:/Claude/BMP-Thesis/src")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "src"))
 
 import geopandas as gpd
 import matplotlib.pyplot as plt
@@ -15,9 +16,11 @@ from model.environment import ThamesEnvironment
 from model.subsidy_strategies import SmartHotspot
 from model.simulation import simulate_program, PARTICIPATION_RATES
 
-PROCESSED = Path("D:/Claude/BMP-Thesis/data/processed")
-RAW = Path("D:/Claude/BMP-Thesis/data/raw")
-FIGURES = Path("D:/Claude/BMP-Thesis/results/figures")
+_REPO = pathlib.Path(__file__).resolve().parents[2]
+
+PROCESSED = (_REPO / "data/processed")
+RAW = (_REPO / "data/raw")
+FIGURES = (_REPO / "results/figures")
 
 # Load spatial data for plotting
 print("Loading spatial data...")

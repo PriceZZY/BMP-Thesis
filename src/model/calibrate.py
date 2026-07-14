@@ -1,3 +1,4 @@
+import pathlib
 """
 Calibration script: find adoption function parameters that match UTRCA Year 1 data.
 
@@ -17,13 +18,15 @@ The paper reports production values ($30/acre).
 """
 
 import sys
-sys.path.insert(0, "D:/Claude/BMP-Thesis/src")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "src"))
 
 import numpy as np
 from model.environment import ThamesEnvironment
 from model.subsidy_strategies import FirstComeFirstServed, HotspotPriority, SmartHotspot
 from model.simulation import simulate_program
 from model.adoption_function import PARAMS
+
+_REPO = pathlib.Path(__file__).resolve().parents[2]
 
 # Calibration targets
 TARGET_NEW_PROJECTS = 595

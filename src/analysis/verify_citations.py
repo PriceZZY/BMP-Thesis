@@ -1,3 +1,4 @@
+import pathlib
 """
 Verify all citations in draft.md against Crossref API.
 For each reference, query Crossref by DOI or title and check:
@@ -11,6 +12,8 @@ import urllib.parse
 import json
 import re
 import time
+
+_REPO = pathlib.Path(__file__).resolve().parents[2]
 
 # Extract references from REVISED_REFERENCES.md verified list
 CITATIONS_TO_VERIFY = [
@@ -248,6 +251,6 @@ if __name__ == '__main__':
     print(f"{'='*70}")
 
     # Save
-    with open('D:/Claude/BMP-Thesis/results/citation_verification.json', 'w') as f:
+    with open(str(_REPO / "results/citation_verification.json"), 'w') as f:
         json.dump(results, f, indent=2, default=str)
     print("Saved to results/citation_verification.json")

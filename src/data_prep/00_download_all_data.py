@@ -1,3 +1,4 @@
+import pathlib
 """
 Download all required GIS data for the BMP Thesis project.
 Uses ArcGIS REST API to query and download data for the Thames River watershed area.
@@ -9,8 +10,10 @@ import urllib.request
 import urllib.parse
 import time
 
+_REPO = pathlib.Path(__file__).resolve().parents[2]
+
 # Project paths
-RAW_DIR = "D:/Claude/BMP-Thesis/data/raw"
+RAW_DIR = str(_REPO / "data/raw")
 
 # Thames River watershed approximate bounding box (NAD83 / EPSG:4269)
 THAMES_BBOX = {

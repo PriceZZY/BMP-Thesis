@@ -1,13 +1,16 @@
+import pathlib
 """
 Pilot: EfficiencyPricing vs FCFS with participation filter.
 50 runs, 6 workers.
 """
 import sys
-sys.path.insert(0, "D:/Claude/BMP-Thesis/src")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "src"))
 
 import numpy as np
 import time
 from multiprocessing import Pool
+
+_REPO = pathlib.Path(__file__).resolve().parents[2]
 
 PARTICIPATION = {'Low': 0.55, 'Medium': 0.45, 'High': 0.30}
 INTERCEPT = -2.00

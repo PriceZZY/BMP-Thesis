@@ -1,3 +1,4 @@
+import pathlib
 """
 Master figure generator (v2) — produces Figs 3, 4, 5, 7 aligned with
 draft_FINAL.md v2 post-citation-audit.
@@ -18,7 +19,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-RESULTS = Path("D:/Claude/BMP-Thesis/results")
+_REPO = pathlib.Path(__file__).resolve().parents[2]
+
+RESULTS = (_REPO / "results")
 FIGURES = RESULTS / "figures"
 
 with open(RESULTS / "monte_carlo_results.json") as f:
@@ -252,8 +255,8 @@ print("  Saved fig5_precipitation_masking.png")
 print("Generating Figure 7: Gap analysis (FCFS)...")
 
 ADDITIONAL_MULT_GAP = 0.78   # weighted avg of (1 − baseline adoption prob) across risk strata:
-                             #   Low 0.60, Medium 0.80, High 0.90; paper L199
-BIOAVAIL_MULT_GAP = 0.40     # PP(0.80)×0.25 + DRP(0.20)×1.0 = 0.40, matches paper L78 exactly
+                             #   Low 0.60, Medium 0.80, High 0.90; see §2.10
+BIOAVAIL_MULT_GAP = 0.40     # PP(0.80)×0.25 + DRP(0.20)×1.0 = 0.40, matches §2.1 derivation exactly
 
 fig, ax = plt.subplots(figsize=(10, 6))
 
@@ -296,8 +299,8 @@ ax.set_title('Gap Analysis: FCFS vs 40% Target\n'
 ax.text(0.01, -0.13,
         'Each adjustment applied independently to gross reduction (not compounded): '
         'additionality factor = gross × 0.78 (weighted avg of 1 − baseline adoption '
-        'probability across risk strata, paper L199); bioavailable factor = gross × 0.40 '
-        '(PP×0.25 + DRP×1.0 under the 80:20 partitioning, paper L78).',
+        'probability across risk strata, see §2.10); bioavailable factor = gross × 0.40 '
+        '(PP×0.25 + DRP×1.0 under the 80:20 partitioning, see §2.1).',
         transform=ax.transAxes, ha='left', va='top', fontsize=8.5,
         style='italic', color='#555555', wrap=True)
 ax.legend(fontsize=11, loc='upper right')

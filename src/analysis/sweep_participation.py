@@ -1,3 +1,4 @@
+import pathlib
 """
 Sweep high-risk participation rate from 30% to 60%.
 Find the crossover point where Smart Hotspot starts beating FCFS.
@@ -5,11 +6,13 @@ Find the crossover point where Smart Hotspot starts beating FCFS.
 """
 
 import sys
-sys.path.insert(0, "D:/Claude/BMP-Thesis/src")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "src"))
 
 import numpy as np
 import time
 from multiprocessing import Pool
+
+_REPO = pathlib.Path(__file__).resolve().parents[2]
 
 HIGH_RISK_RATES = [0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60]
 LOW_RATE = 0.55

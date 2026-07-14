@@ -1,3 +1,4 @@
+import pathlib
 """
 Figure 2: P-risk choropleth map of Upper Thames watershed.
 """
@@ -6,9 +7,9 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from pathlib import Path
 
-PROCESSED = Path("D:/Claude/BMP-Thesis/data/processed")
-RAW = Path("D:/Claude/BMP-Thesis/data/raw")
-FIGURES = Path("D:/Claude/BMP-Thesis/results/figures")
+PROCESSED = (_REPO / "data/processed")
+RAW = (_REPO / "data/raw")
+FIGURES = (_REPO / "results/figures")
 
 print("Loading data...")
 fields = gpd.read_file(PROCESSED / "field_agents_upper_thames.gpkg")
@@ -17,6 +18,8 @@ rivers = gpd.read_file(RAW / "hydro_network" / "ohn_watercourse.geojson")
 
 # Re-download rivers for correct bbox
 import json, urllib.request, urllib.parse
+
+_REPO = pathlib.Path(__file__).resolve().parents[2]
 
 boundary_4326 = boundary.to_crs("EPSG:4269")
 b = boundary_4326.total_bounds  # xmin, ymin, xmax, ymax

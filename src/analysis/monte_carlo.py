@@ -1,10 +1,11 @@
+import pathlib
 """
 Monte Carlo: 1000 runs x 5 strategies — PARALLEL version.
 Uses multiprocessing to maximize CPU utilization.
 """
 
 import sys
-sys.path.insert(0, "D:/Claude/BMP-Thesis/src")
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2] / "src"))
 
 import numpy as np
 import json
@@ -12,8 +13,10 @@ import time
 from pathlib import Path
 from multiprocessing import Pool, cpu_count
 
+_REPO = pathlib.Path(__file__).resolve().parents[2]
+
 N_RUNS = 1000
-RESULTS_DIR = Path("D:/Claude/BMP-Thesis/results")
+RESULTS_DIR = (_REPO / "results")
 RESULTS_DIR.mkdir(exist_ok=True)
 
 
