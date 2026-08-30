@@ -1,4 +1,5 @@
-# Raw downloaded spatial data (1.7 GB; reproducible via src/data_prep/00_download_all_data.py)
+# Raw spatial inputs (~1.6 GB). ⚠️ 只有一部分能由 00_download_all_data.py 自动获得；
+# 逐文件的来源与「哪些必须手动准备」见 data/raw/MANIFEST.md（该清单已入库）。
 data/raw/
 
 # Python
