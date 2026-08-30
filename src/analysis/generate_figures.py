@@ -50,7 +50,7 @@ data_p = [[r['p_reduction_t'] for r in fcfs],
           [r['p_reduction_t'] for r in naive],
           [r['p_reduction_t'] for r in smart]]
 
-bp = axes[0].boxplot(data_p, labels=NAMES, patch_artist=True, widths=0.6,
+bp = axes[0].boxplot(data_p, tick_labels=NAMES, patch_artist=True, widths=0.6,
                       medianprops=dict(color='black', linewidth=2))
 for patch, color in zip(bp['boxes'], COLORS):
     patch.set_facecolor(color)
@@ -65,7 +65,7 @@ data_cost = [[r['cost_per_kg'] for r in fcfs],
              [r['cost_per_kg'] for r in naive],
              [r['cost_per_kg'] for r in smart]]
 
-bp2 = axes[1].boxplot(data_cost, labels=NAMES, patch_artist=True, widths=0.6,
+bp2 = axes[1].boxplot(data_cost, tick_labels=NAMES, patch_artist=True, widths=0.6,
                        medianprops=dict(color='black', linewidth=2))
 for patch, color in zip(bp2['boxes'], COLORS):
     patch.set_facecolor(color)
@@ -81,7 +81,7 @@ smart_imp = [(s['p_reduction_t'] - f['p_reduction_t']) / f['p_reduction_t'] * 10
              for s, f in zip(smart, fcfs)]
 
 bp3 = axes[2].boxplot([naive_imp, smart_imp],
-                       labels=['Naive\nHotspot', 'Smart\nHotspot'],
+                       tick_labels=['Naive\nHotspot', 'Smart\nHotspot'],
                        patch_artist=True, widths=0.5,
                        medianprops=dict(color='black', linewidth=2))
 bp3['boxes'][0].set_facecolor(C_NAIVE)
@@ -146,7 +146,7 @@ fig, ax = plt.subplots(figsize=(10, 6))
 
 # Scatter: each dot is one MC run, x=precip effect on base load, y=P reduction
 # Use y1 data for clearest signal
-fcfs_y1_p = [r['y1_p'] for r in fcfs]
+# (removed) fcfs_y1_p — dead assignment: never read; Fig 5 uses p_reduction_t below
 # Approximate base load from total reduction / fraction
 # Instead, show the distribution width
 p_reductions = [r['p_reduction_t'] for r in fcfs]

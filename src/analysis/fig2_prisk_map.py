@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from pathlib import Path
 
+_REPO = pathlib.Path(__file__).resolve().parents[2]
 PROCESSED = (_REPO / "data/processed")
 RAW = (_REPO / "data/raw")
 FIGURES = (_REPO / "results/figures")
@@ -19,7 +20,6 @@ rivers = gpd.read_file(RAW / "hydro_network" / "ohn_watercourse.geojson")
 # Re-download rivers for correct bbox
 import json, urllib.request, urllib.parse
 
-_REPO = pathlib.Path(__file__).resolve().parents[2]
 
 boundary_4326 = boundary.to_crs("EPSG:4269")
 b = boundary_4326.total_bounds  # xmin, ymin, xmax, ymax
