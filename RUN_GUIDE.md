@@ -92,7 +92,18 @@ python src/analysis/sweep_2d_participation.py
 python src/analysis/generate_figures.py
 ```
 
-**Determinism**: main MC uses seeds 1000–1999; variance decomposition uses seeds 8000–8999. Re-running with the same seeds reproduces the manuscript values to floating-point precision.
+**Determinism**: main MC uses seeds 1000–1999; variance decomposition uses seeds 8000–8999. Two runs of the *same* code with the same seeds give identical output.
+
+> **Provenance of the archived results.** The result files in `results/` were produced at
+> commit `3821bf3` (initial public release). A subsequent commit (`d51d79b`) corrected an
+> inverted sampling switch which had prevented biophysical parameters from being resampled;
+> the archived results therefore predate that correction and **will not reproduce bit-for-bit
+> against current `HEAD`**. The discrepancy has been quantified: under the per-field reading
+> of `BASE_P_LOSS.std` the parameter contribution is 0.09% versus the 0.001% reported, so the
+> archived values remain numerically sound; under a run-level (epistemic) reading it rises to
+> 16.7%. Precipitation dominates the variance under either treatment. A full rerun and the
+> corresponding revision of reported intervals are deferred to the revision stage.
+
 
 ---
 
