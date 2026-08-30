@@ -20,7 +20,12 @@ import sys, os, io, json, time, contextlib
 import numpy as np
 from multiprocessing import Pool
 
-REPO = "/Users/pricesmacbook/Documents/世界认知/claude/BMP-Thesis"
+import pathlib
+# 仓根按脚本自身位置推出来，与仓内其他脚本同款（fig8_tornado.py:10 等）。
+# ⚠️ 原先写死绝对路径 —— 本机外不可运行，且会把作者的用户名与本地目录结构
+#    公开到仓库里。`6c3ae58` 那笔提交刚移除过全仓 35 处硬编码路径，这三个
+#    R&R 脚本是之后新写的，同一个病又长了回来（审计 B10 #5 点名）。
+REPO = str(pathlib.Path(__file__).resolve().parents[2])
 os.chdir(REPO)
 sys.path.insert(0, "src")
 
@@ -107,4 +112,4 @@ if __name__ == "__main__":
     print(f"\n  {2*N} runs in {time.time()-t0:.0f}s", file=sys.stderr)
     json.dump({"var_c": var_c, "var_a": var_a, "var_params": var_params,
                "var_precip": VAR_B_PUBLISHED, "total": total, "n": N},
-              open("/private/tmp/claude-501/-Users-pricesmacbook/5cff14cf-29bb-4f73-a231-154d43db4438/scratchpad/variance_fix.json", "w"))
+              open(f"{REPO}/results/_RR2026-07-13_variance_decomposition_CORRECTED.json", "w"))

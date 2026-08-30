@@ -2,7 +2,7 @@
 
 **Written:** 2026-07-13 by Claude (Fable 5), for GPT-5.6 incoming as **architecture gate**.
 **Role split going forward:** GPT-5.6 = architecture / decision gate. Claude = implementation.
-**Author / owner:** Zhenyu Zhou (Price), UWaterloo Geospatial Data Science 2A, **sole author, first submission.**
+**Author / owner:** Price, **sole author, first submission.**
 
 ---
 

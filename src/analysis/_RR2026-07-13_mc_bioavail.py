@@ -9,7 +9,12 @@ from multiprocessing import Pool
 
 sys.setrecursionlimit(1_000_000)
 
-REPO = "/Users/pricesmacbook/Documents/世界认知/claude/BMP-Thesis"
+import pathlib
+# 仓根按脚本自身位置推出来，与仓内其他脚本同款（fig8_tornado.py:10 等）。
+# ⚠️ 原先写死绝对路径 —— 本机外不可运行，且会把作者的用户名与本地目录结构
+#    公开到仓库里。`6c3ae58` 那笔提交刚移除过全仓 35 处硬编码路径，这三个
+#    R&R 脚本是之后新写的，同一个病又长了回来（审计 B10 #5 点名）。
+REPO = str(pathlib.Path(__file__).resolve().parents[2])
 os.chdir(REPO)
 sys.path.insert(0, "src")
 
@@ -90,7 +95,7 @@ if __name__ == "__main__":
     if not ok:
         sys.exit("Refusing to report numbers from a harness that does not reproduce the paper.")
 
-    path = "/private/tmp/claude-501/-Users-pricesmacbook/5cff14cf-29bb-4f73-a231-154d43db4438/scratchpad/mc_bioavail.json"
+    path = f"{REPO}/results/_RR2026-07-13_bioavailable_by_strategy.json"
     with open(path, "w") as f:
         json.dump({"n_seeds": n_seeds, "runs": out}, f)
     print(f"wrote {path}", file=sys.stderr)
